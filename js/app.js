@@ -47,9 +47,12 @@ var app = (function () {
        routes: {
            '': 'list'
        },
-        list: function () {
+        list: function (blah) {
             var view = ViewsFactory.list();
-            api.title()
+            api
+                .title(blah ? 'Hello' : 'Choose Property')
+                .changeContent(view.$el);
+            view.setMode(blah ? 'Yo' : null).render();
         }
     });
 

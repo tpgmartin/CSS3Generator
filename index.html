@@ -7,16 +7,17 @@
 
     <body>
         <div class="container">
-            <div id="menu"></div>
             <h1>CSS3 Generator</h1>
+            <div id="menu"></div>
             <div id="content"></div>
+            <footer><a href="http://tpgmartin.com/">Tom Martin</a></footer>
         </div>
 
         <script type="text/template" id="tpl-menu">
             <h2 id="sub-heading"></h2>
         </script>
         <script type="text/template" id="tpl-list-property">
-            <div class="item-property"><%= title></div>
+            <li class="item-property" data-index="<%= index %>"><%= title %></li>
         </script>
         <script type="text/template" id="tpl-s">
             <div></div>
