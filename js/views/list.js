@@ -1,6 +1,10 @@
 app.views.list = Backbone.View.extend({
     mode: null,
 
+    events: {
+        'click li[data-status]': 'changeVisibility'
+    },
+
     initialize: function () {
         var handler = _.bind(this.render, this);
         this.model.bind('change', handler);
@@ -21,8 +25,9 @@ app.views.list = Backbone.View.extend({
         return this;
     },
 
-    changeVisibility: function () {
-
+    changeVisibility: function (e) {
+        var index = parseInt(e.target.getAttribute('data-index'));
+        console.log(index);
     },
 
     setMode: function (mode) {
