@@ -21,7 +21,16 @@
         </script>
         <script type="text/template" id="tpl-list-property">
             <li class="item-property" data-status <%= isVisible %> data-index="<%= index %>"><%= title %></li>
-            <div class="item-dashboard hide">I'm a magic div <%= index %></div>
+            <div class="item-dashboard hide">My index is <%= index %>
+                <% _.each(values, function(value) { %>
+                    <label>
+                        <h4><%- value['name'] %></h4>
+                        <input type="text"/>
+                        <span><%- value['options'] %></span>
+                        <i><%- value['units'] %></i>
+                    </label>
+                <% }); %>
+            </div>
         </script>
         <script type="text/template" id="tpl-s">
             <div></div>
