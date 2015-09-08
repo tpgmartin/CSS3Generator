@@ -17,7 +17,10 @@ app.views.list = Backbone.View.extend({
             var template = _.template($('#tpl-list-property').html());
             html += template({
                 title: property.get('title'),
-                index: index
+                index: index,
+                visible: property.get('visible') ? 'visible' : 'hidden',
+                isVisible: property.get('visible') ? 'visible=="visible"' : ''
+
             });
         });
         this.$el.html(html);
@@ -27,7 +30,12 @@ app.views.list = Backbone.View.extend({
 
     changeVisibility: function (e) {
         var index = parseInt(e.target.getAttribute('data-index'));
-        console.log(index);
+        //this.model.changeVisibility($(e.target).next().visible, index);
+
+        // Don't like doing this with jquery
+        $(e.target).siblings('.item-property').toggleClass('hide');
+        $(e.target).next().toggleClass('hide');
+
     },
 
     setMode: function (mode) {

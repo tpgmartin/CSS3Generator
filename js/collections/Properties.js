@@ -270,8 +270,8 @@ app.collections.Properties = Backbone.Collection.extend({
         });
     },
 
-    changeVisibility: function () {
-
+    changeVisibility: function (visible, index) {
+        this.models[index].set('visible', visible);
     },
 
     model: app.models.Property

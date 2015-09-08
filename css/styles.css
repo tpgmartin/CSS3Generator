@@ -42,3 +42,7 @@ body {
 .footer-link {
     text-decoration: none;
 }
+
+.hide {
+    display: none;
+}
